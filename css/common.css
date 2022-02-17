@@ -1,0 +1,130 @@
+/* 공통 */
+@font-face {
+  font-family: 'GmarketSansMedium';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'GmarketSansLight';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansLight.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'GmarketSansBold';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff') format('woff');
+}
+
+body {
+  font-family: 'GmarketSansMedium', Helvetica, Arial, sans-serif !important;
+  color: #333;
+}
+
+* {
+  box-sizing: unset;
+}
+
+img {
+  display: block;
+  max-width: unset;
+}
+
+p {
+  margin: 0;
+}
+
+.post-content p {
+  margin: 0;
+}
+
+.font-light {
+  font-family: 'GmarketSansLight', 'GmarketSansMedium', Helvetica;
+}
+
+.font-bold {
+  font-family: 'GmarketSansBold', Helvetica, Arial, sans-serif;
+}
+
+.inner {
+  width: 1100px;
+  /* height: calc(100vh - 80px); */
+  height: 760px;
+  position: relative;
+  
+  margin: auto;
+  padding: 80px;
+  padding-bottom: 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  font-size: 2.4rem;
+  font-weight: bold;
+  line-height: 3rem;
+  word-break: keep-all;
+  
+}
+
+.inner .inner__top {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: auto;
+  text-align: center;
+}
+
+.inner .inner__center {
+  width:100%;
+  margin: auto 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.inner .inner__bottom {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: auto;
+  position: relative;
+}
+
+
+/* animation 공통 */
+:is(.top-to-bottom, .left-to-right, .right-to-left) {
+  transition: .6s;
+  opacity: 0;
+}
+.top-to-bottom {
+  transform: translateY(-80px);
+}
+
+.left-to-right {
+  transform: translateX(-80px);
+}
+
+.right-to-left {
+  transform: translateX(80px);
+}
+
+.show :is(.top-to-bottom, .left-to-right, .right-to-left) {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.delay-1 {
+  transition-delay: .3s;
+}
+
+.delay-2 {
+  transition-delay: .6s;
+}
+
+.delay-3 {
+  transition-delay: .9s;
+}
+
+.delay-4 {
+  transition-delay: .12s;
+}
