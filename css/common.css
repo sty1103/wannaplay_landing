@@ -16,6 +16,7 @@
 
 body {
   font-family: 'GmarketSansMedium', Helvetica, Arial, sans-serif !important;
+  font-size: 14px;
   color: #333;
 }
 
@@ -42,6 +43,10 @@ p {
 
 .font-bold {
   font-family: 'GmarketSansBold', Helvetica, Arial, sans-serif;
+}
+
+section {
+  overflow: hidden;
 }
 
 .inner {
