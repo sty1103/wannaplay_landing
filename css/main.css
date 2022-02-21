@@ -598,7 +598,8 @@
 }
 
 .request .inner .item input {
-  width: calc(100% - 34px);
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .request .inner .inner__top {
