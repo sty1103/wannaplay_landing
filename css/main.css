@@ -1,11 +1,10 @@
 /* main 페이지 */
 .main {
-  /* background: url("./images/page1-background.gif") no-repeat center;
-  background-size: cover; */
+  background: url("/images/page1-background.gif") no-repeat center;
+  background-size: cover;
   z-index: 1;
   color: #6EFFD2;
   position: relative;
-  overflow: hidden;
 }
 
 .main .youtube {
