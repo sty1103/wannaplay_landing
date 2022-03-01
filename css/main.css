@@ -633,6 +633,10 @@
   border: 1px solid #5587CB;
 }
 
+.request .inner :is(input, textarea).invalid {
+  border: 2px solid red;
+}
+
 .request .inner textarea {
   height: 200px;
   resize: none;
