@@ -232,12 +232,28 @@
     </div>
   </section>
 
+  <style>
+    .scroll-box {
+      -ms-overflow-style: none; /* IE and Edge */
+      scrollbar-width: none; /* Firefox */
+    }
+    .scroll-box::-webkit-scrollbar {
+      display: none; /* Chrome, Safari, Opera*/
+    }
+  </style>
+
   <section class="textbook scroll-spy">
     <div class="inner">
       <div class="inner__center">
-        <img class="disable-lazyload" src="/images/page6-phone.png" />
-        
-        <div class="top font-bold right-to-left">
+        <div style="position: relative;">
+          <img class="disable-lazyload" src="/images/page6-phone.png" style="z-index:-1; left:-119px; width:168%; top:-16px;" />
+          <div style="width:66%; overflow:hidden; border-radius:34px; transform:rotateZ(-12.5deg) rotateX(-13deg) rotateY(-18.5deg);">
+            <div style="height:506px; overflow-y:auto; oveflow-x:hidden;" class="scroll-box">
+              <img src="/images/page6-scroll.png" style="position:static; display:block; width:100%; height:auto; " />
+            </div>  
+          </div>
+        </div>
+        <!-- <div class="top font-bold right-to-left">
           <div>
             교재 말고도 하고 싶은<br/>
             노래들이 있다구요?
@@ -260,7 +276,7 @@
           DO YOU WANNA PLAY<br/>
           WITH US?
         </div>
-      </div>
+      </div> -->
     </div>
   </section>
 
