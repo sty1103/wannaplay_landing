@@ -15,7 +15,10 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js" integrity="sha512-H6cPm97FAsgIKmlBA4s774vqoN24V5gSQL4yBTDOY2su2DeXZVhQPxFK4P6GPdnZqM9fg1G3cMv5wD7e6cFLZQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
   <!-- Scroll Magic -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/ScrollMagic.min.js" integrity="sha512-8E3KZoPoZCD+1dgfqhPbejQBnQfBXe8FuwL4z/c8sTrgeDMFEnoyTlH3obB4/fV+6Sg0a0XF+L/6xS4Xx1fUEg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/ScrollMagic.js" integrity="sha512-UgS0SVyy/0fZ0i48Rr7gKpnP+Jio3oC7M4XaKP3BJUB/guN6Zr4BjU0Hsle0ey2HJvPLHE5YQCXTDrx27Lhe7A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/animation.gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.2/TweenMax.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.2/plugins/TextPlugin.min.js"></script>
 
   <!-- Axios -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.26.0/axios.min.js" integrity="sha512-bPh3uwgU5qEMipS/VOmRqynnMXGGSRv+72H/N260MQeXZIK4PG48401Bsby9Nq5P5fz7hy5UGNmC/W1Z51h2GQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -31,7 +34,7 @@
   <title>WannaPlay</title>
 </head>
 <body>
-  <section class="main">
+  <section class="main scroll-spy">
     <!-- <div class="youtube">
       <iframe src="https://www.youtube.com/embed/pcaYxhArfv4?autoplay=1&mute=1&loop=1&playlist=pcaYxhArfv4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div> -->
@@ -43,7 +46,7 @@
       </div>
       <div class="bars">
         <hr/><hr/><hr/><hr/>
-        <img class="floating floating1" src="/images/page8-note_1.png" />
+        <!-- <img class="floating floating1" src="/images/page8-note_1.png" />
         <img class="floating floating3" src="/images/page8-note_2.png" />
         <img class="floating floating5" src="/images/page8-note_3.png" />
         <img class="floating floating2" src="/images/page8-note_1.png" />
@@ -52,7 +55,7 @@
         <img class="floating floating7" src="/images/page8-note_2.png" />
         <img class="floating floating10" src="/images/page8-note_1.png" />
         <img class="floating floating8" src="/images/page8-note_3.png" />
-        <img class="floating floating9" src="/images/page8-note_2.png" />
+        <img class="floating floating9" src="/images/page8-note_2.png" /> -->
       </div>
       <ul>
         <li>경험하기</li>
@@ -69,15 +72,19 @@
       </div>
 
       <div class="inner__bottom font-light">
-        <div class="top-to-bottom">전세계 누구와도</div>
+        <div class="text-wrapper">
+          <div class="scroll-text dummy" style="position:static; opacity:0;">전세계 누구와도</div>
+          <div class="scroll-text first">전세계 누구와도</div>
+          <div class="scroll-text second">하모니를 이루다</div>
+        </div>
+        
         <div class="image-wrapper">
           <img class="disable-lazyload" src="/images/page2-earth.png" />
 
-        <img class="location l1 top-to-bottom delay-1 disable-lazyload" src="/images/page2-location_icon.jpeg" />
-        <img class="location l2 top-to-bottom delay-2 disable-lazyload" src="/images/page2-location_icon.jpeg" />
-        <img class="location l3 top-to-bottom delay-3 disable-lazyload" src="/images/page2-location_icon.jpeg" />  
+        <img class="location l1 delay-1 disable-lazyload" src="/images/page2-location_icon.jpeg" />
+        <img class="location l2 delay-2 disable-lazyload" src="/images/page2-location_icon.jpeg" />
+        <img class="location l3 delay-3 disable-lazyload" src="/images/page2-location_icon.jpeg" />  
         </div>
-        
       </div>
     </div>
   </section>
@@ -245,15 +252,16 @@
   <section class="textbook scroll-spy">
     <div class="inner">
       <div class="inner__center">
-        <div style="position: relative;">
+        <!-- <div style="position: relative;">
           <img class="disable-lazyload" src="/images/page6-phone.png" style="z-index:-1; left:-124px; width:168%; top:-16px;" />
           <div style="width:64%; overflow:hidden; border-radius:34px; transform:rotateZ(-12.5deg) rotateX(-13deg) rotateY(-16.5deg);">
             <div style="height:506px; overflow-y:auto; oveflow-x:hidden;" class="scroll-box">
               <img src="/images/page6-scroll.png" style="position:static; display:block; width:100%; height:auto; " />
             </div>  
           </div>
-        </div>
-        <!-- <div class="top font-bold right-to-left">
+        </div> -->
+        <img class="disable-lazyload" src="/images/page6-phone.png" />
+        <div class="top font-bold right-to-left">
           <div>
             교재 말고도 하고 싶은<br/>
             노래들이 있다구요?
@@ -276,7 +284,7 @@
           DO YOU WANNA PLAY<br/>
           WITH US?
         </div>
-      </div> -->
+      </div>
     </div>
   </section>
 

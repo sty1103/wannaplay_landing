@@ -1,13 +1,34 @@
 const spyEls = document.querySelectorAll('.scroll-spy');
 
+window.addEventListener('scroll', () => {
+  const main = document.querySelector('section.main');
+  const harmony = document.querySelector('section.harmony');
+
+  // 하모니 섹션 스크롤 애니메이션
+  if ( window.scrollY >= main.offsetHeight && window.scrollY <= main.offsetHeight + harmony.offsetHeight ) {
+    const inner = harmony.querySelector('.inner');
+    const text1 = harmony.querySelector('.scroll-text.first');
+    const text2 = harmony.querySelector('.scroll-text.second');
+
+    if ( window.scrollY >= (main.offsetHeight + inner.offsetHeight)/1.5 ) {
+      text1.classList.add('hide');
+      text2.classList.add('show');
+    } else {
+      text1.classList.remove('hide');
+      text2.classList.remove('show');
+    }
+  }
+});
+
 spyEls.forEach((spyEl, index) => {
   new ScrollMagic
-  .Scene({
-    triggerElement: spyEl,
-    triggerHook: .3
-  })
-  .setClassToggle(spyEl, 'show')
-  .addTo(new ScrollMagic.Controller());
+    .Scene({
+      triggerElement: spyEl,
+      triggerHook: .3
+    })
+    .setClassToggle(spyEl, 'show')
+    .reverse(false)
+    .addTo(new ScrollMagic.Controller());
 });
 
 const floatEls = document.querySelectorAll('.floating');
