@@ -1,29 +1,21 @@
 /* main 페이지 */
 .main {
-  background: url("/images/page1-background.gif") no-repeat center;
-  background-size: cover;
   z-index: 1;
   color: #6EFFD2;
   position: relative;
   overflow: hidden;
 }
 
-.main .youtube {
-  z-index: -1;
+.main video {
   position: absolute;
-  width: 150%;
-  height: 150%;
-  top: 50%;
-  left: 50%;
   transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%;
+  width: 130%;
+  height: 130%;
 }
 
-.main .youtube iframe {
-  width: 100%;
-  height: 100%;
-}
-
-.main:before {
+/* .main:before {
   content: "";
   width: 100%;
   height: 100%;
@@ -32,6 +24,23 @@
   position: absolute;
   top: 0;
   left: 0;
+  z-index: 1;
+} */
+
+.main .blur {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: black;
+  opacity: 0;
+  transition: 2s;
+}
+
+.main.blur .blur {
+  opacity: .6;
 }
 
 .main .inner {
@@ -49,13 +58,31 @@
 .main .inner .bars {
   /* width: calc(100vw - 15px); */
   width: 0;
+  opacity: 0;
   margin: 30px 0;
   position: relative;
-  transition: 2.8s;
+  transition: width 2.6s, opacity .1s, transform 1s;
+  transform: translateY(-70px);
 }
 
-.main.show .inner .bars {
+.main.bars--width .inner .bars {
+  opacity: 1;
   width: 100vw;
+}
+
+.main.bars--transform .inner .bars {
+  transform: translateY(0);
+}
+
+.main .inner .slogan {
+  transition: transform .8s, opacity 1.6s;
+  opacity: 0;
+  transform: translateY(-40px);
+}
+
+.main.slogan .inner .slogan {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .main .inner .bars hr {
@@ -184,29 +211,35 @@
 .harmony .inner .inner__bottom img.location {
   position: absolute;
   width: 0;
-  transition: .3s;
+  transition: .2s;
 }
 
 .harmony.show .inner .inner__bottom img.location {
-  width: 50px;
+  width: 70px;
 }
 
 .harmony .inner .inner__bottom img.l1 {
-  top: 150px;
-  left: 30%;
+  top: 250px;
+  left: 16%;
   transition-delay: .3s;
 }
 
 .harmony .inner .inner__bottom img.l2 {
-  top: 140px;
-  right: 28%;
-  transition-delay: .6s;
+  top: 164px;
+  right: 22%;
+  transition-delay: .9s;
 }
 
 .harmony .inner .inner__bottom img.l3 {
+  top: 116px;
+  left: 38%;
+  transition-delay: .6s;
+}
+
+.harmony .inner .inner__bottom img.l4 {
   top: 330px;
   right: 25%;
-  transition-delay: .9s;
+  transition-delay: .12s;
 }
 
 /* needs 페이지 */
@@ -265,17 +298,25 @@
 
 /* point 페이지 */
 .point {
-  overflow: hidden;
+  background: #F0F0F0;
 }
 
 .point .inner {
   height: auto;
+  /* width: 1200px; */
+  overflow: hidden;
 }
 
 .point .inner .left {
-  display: flex;
+  /* display: flex; */
   margin-right: auto;
   text-align: left;
+  font-size: 3.6rem;
+}
+
+.point .inner .left .bottom {
+  font-size: 1.6rem;
+  margin-top: 10px;
 }
 
 .point .inner .right {
@@ -283,6 +324,11 @@
   justify-content: flex-end;
   margin-left: auto;
   text-align: right;
+}
+
+.point .inner .right > img {
+  width: 300px;
+  z-index: 1;
 }
 
 .point .inner .text {
@@ -319,7 +365,6 @@
 
 .point .inner .inner__top .right {
   flex-direction: column;
-  gap: 15px;
   margin-left: auto;
   margin-right: 180px;
 }
@@ -370,40 +415,38 @@
 }
 
 .point .inner .inner__top .right .text {
-  position: absolute;
   right: 100px;
+  margin-top: 300px;
 }
 
 .point .inner .inner__center {
-  flex-direction: row;
+  margin-top: 160px;
 }
 
 .point .inner .inner__center .left {
   position: relative;
-  margin-left: 100px;
+  display: flex;
+  flex-direction: column;
 }
 
 .point .inner .inner__center .left img {
-  position: absolute;
-  top: -550%;
-  left: -150%;
-  /* z-index: -1; */
+  width: 65%;
 }
 
 .point .inner .inner__center .right {
-  position: relative;
-  margin-top: 800px;
-  margin-right: 270px;
+  display: flex;
+  margin-top: 160px;
 }
 
 .point .inner .inner__center .right img {
-  position: absolute;
-  right: -240%;
-  top: -250%;
+  width: 55%;
 }
 
 .point .inner .inner__center .right .text {
   text-align: right;
+  margin-top: auto;
+  margin-bottom: 140px;
+  margin-right: -60px;
 }
 
 .point .inner .inner__bottom {
@@ -482,9 +525,10 @@
 
 .upload .inner .inner__center img {
   position: absolute;
-  bottom: 0;
-  left: 200px;
+  bottom: -20px;
+  right: 200px;
   z-index: 1;
+  width: 45%;
 }
 
 
@@ -531,30 +575,34 @@
 /* challenge 페이지 */
 .challenge {
   background: linear-gradient(white, #E9EEF4);
-  position: relative;
+  overflow: hidden;
 }
 
-.challenge .inner .inner__bottom {
+.challenge .inner .inner__center {
+  align-items: flex-start;
+  gap: 30px;
+}
+
+.challenge .inner .inner__center > div {
+  z-index: 2;
+}
+
+.challenge .inner .inner__center .center {
+  font-size: 1.8rem;
+}
+
+.challenge .inner .inner__center .bottom {
+  font-size: 1.8rem;
   margin-bottom: 80px;
 }
 
-.challenge .inner .inner__bottom img {
+.challenge .inner .inner__center img {
   position: absolute;
-  top: -150%;
-  left: -97%;
+  bottom: -20px;
+  right: 200px;
   z-index: 1;
-}
-
-.challenge .inner .inner__bottom .top {
-  z-index: 2;
-  margin-bottom: 40px;
-}
-
-.challenge .inner .inner__bottom .bottom {
-  margin-bottom: 10px;
-  text-align: center;
-  font-size: 1.6rem;
-  line-height: 2.4rem;
+  width: 58%;
+  image-rendering: -webkit-optimize-contrast;
 }
 
 
@@ -798,7 +846,7 @@
 /* 데스크탑 */
 @media screen and (max-width:1799px) {
   .upload .inner .inner__center img {
-    left: 200px;
+    right: 200px;
   }
 }
 
@@ -849,9 +897,8 @@
   }
 
   .upload .inner .inner__center img {
-    left: 150px;
-    width: 90%;
-    max-width: 90%;
+    left: 200px;
+    width: 30%;
   }
 
   .textbook .inner .inner__center img {
