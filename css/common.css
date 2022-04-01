@@ -133,3 +133,11 @@ section {
 .delay-4 {
   transition-delay: .12s;
 }
+
+#boxed-wrapper {
+  overflow: unset;
+}
+
+section#content {
+  overflow: unset;
+}

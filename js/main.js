@@ -1,28 +1,22 @@
-// 영상 재생
 const video_1 = document.querySelector('section.main video:nth-child(1)');
 const video_2 = document.querySelector('section.main video:nth-child(2)');
 
 video_2.pause();
 
 video_1.addEventListener('pause', () => {
-  // 첫 번째 영상이 종료된 후 두 번째 영상을 재생
   video_2.play();
   video_1.remove();
 });
 
 video_2.addEventListener('play', () => {
-  // 블러, 오선, 슬로건 노출
   setTimeout(() => {
     const main = document.querySelector('section.main');
 
-    // 블러, 오선 노출
     main.classList.add('blur', 'bars--width');
 
-    // 오선 위치를 아래로
     setTimeout(() => {
-      main.classList.add('bars--transform')
+      main.classList.add('bars--transform');
 
-      // 슬로건 노출
       setTimeout(() => {
         main.classList.add('slogan');
       }, 1200);
@@ -30,21 +24,17 @@ video_2.addEventListener('play', () => {
   }, 2000);
 });
 
-// 반복 재생
 video_2.addEventListener('ended', () => {
-  // video_2.load();
   video_2.currentTime = 0.0;
   video_2.play();
 });
 
-// 스크롤 컨트롤
 const spyEls = document.querySelectorAll('.scroll-spy');
 
 window.addEventListener('scroll', () => {
   const main = document.querySelector('section.main');
   const harmony = document.querySelector('section.harmony');
 
-  // 하모니 섹션 스크롤 애니메이션
   if ( window.scrollY >= main.offsetHeight && window.scrollY <= main.offsetHeight + harmony.offsetHeight ) {
     const inner = harmony.querySelector('.inner');
     const text1 = harmony.querySelector('.scroll-text.first');
