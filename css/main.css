@@ -13,19 +13,8 @@
   top: 50%;
   width: 130%;
   height: 130%;
-}
-
-/* .main:before {
-  content: "";
-  width: 100%;
-  height: 100%;
   background: black;
-  opacity: .7;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 1;
-} */
+}
 
 .main .blur {
   width: 100%;
@@ -36,7 +25,7 @@
   transform: translate(-50%, -50%);
   background: black;
   opacity: 0;
-  transition: 2s;
+  transition: opacity 2s;
 }
 
 .main.blur .blur {
@@ -122,7 +111,7 @@
 }
 
 .main .inner ul li:first-child {
-  margin-right: 15px;
+  margin-right: 80px;
 }
 
 .main .inner ul li:hover {
@@ -145,23 +134,19 @@
   padding-top: 80px;
   overflow: hidden;
   height: calc(100vh - 80px);
-  /* background: linear-gradient(white, #E9EEF4); */
+  background: linear-gradient(white, #E9EEF4);
   position: -webkit-sticky;
   position: sticky;
   top: 0;
 }
 
-.harmony .inner__bottom {
+.harmony .inner__center .text-wrapper {
   font-size: 3rem;
-  position: relative;
-}
-
-.harmony .inner__bottom .text-wrapper {
   position: relative;
   width: 100%;
 }
 
-.harmony .inner__bottom .text-wrapper > div {
+.harmony .inner__center .text-wrapper > div {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -171,27 +156,27 @@
   text-align: center;
 }
 
-.harmony .inner__bottom .text-wrapper > .first {
+.harmony .inner__center .text-wrapper > .first {
   opacity: 0;
   top: 200%;
 }
 
-.harmony.show .inner__bottom .text-wrapper > .first {
+.harmony.show .inner__center .text-wrapper > .first {
   opacity: 1;
   top: 50%;
 }
 
-.harmony .inner__bottom .text-wrapper > .first.hide {
+.harmony .inner__center .text-wrapper > .first.hide {
   opacity: 0;
   top: -200%;
 }
 
-.harmony .inner__bottom .text-wrapper > .second {
+.harmony .inner__center .text-wrapper > .second {
   top: 200%;
   opacity: 0;
 }
 
-.harmony .inner__bottom .text-wrapper > .second.show {
+.harmony .inner__center .text-wrapper > .second.show {
   top: 50%;
   opacity: 1;
 }
@@ -205,6 +190,7 @@
 .harmony .inner .inner__bottom img:nth-of-type(1) {
   margin-top: auto;
   margin-bottom: 0;
+  max-width: 120%;
   min-width: 120%;
 }
 
@@ -219,27 +205,31 @@
 }
 
 .harmony .inner .inner__bottom img.l1 {
-  top: 250px;
+  top: 240px;
   left: 16%;
   transition-delay: .3s;
 }
 
 .harmony .inner .inner__bottom img.l2 {
-  top: 164px;
+  top: 160px;
   right: 22%;
   transition-delay: .9s;
 }
 
 .harmony .inner .inner__bottom img.l3 {
-  top: 116px;
+  top: 100px;
   left: 38%;
   transition-delay: .6s;
 }
 
 .harmony .inner .inner__bottom img.l4 {
-  top: 330px;
+  top: 320px;
   right: 25%;
   transition-delay: .12s;
+}
+
+.harmony .inner .inner__bottom > :nth-child(2) {
+  font-size: 2.2rem;
 }
 
 /* needs 페이지 */
@@ -304,7 +294,7 @@
 .point .inner {
   height: auto;
   /* width: 1200px; */
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 .point .inner .left {
@@ -431,27 +421,30 @@
 
 .point .inner .inner__center .left img {
   width: 65%;
+  margin-left: -200px;
+  margin-bottom: 15px;
 }
 
 .point .inner .inner__center .right {
   display: flex;
-  margin-top: 160px;
+  margin-top: 15px;
 }
 
 .point .inner .inner__center .right img {
   width: 55%;
+  margin-right: -200px;
 }
 
 .point .inner .inner__center .right .text {
   text-align: right;
   margin-top: auto;
-  margin-bottom: 140px;
+  margin-bottom: 110px;
   margin-right: -60px;
 }
 
 .point .inner .inner__bottom {
   margin-right: auto;
-  margin-top: 200px;
+  margin-top: 100px;
   margin-left: 100px;
 }
 
@@ -528,7 +521,7 @@
   bottom: -20px;
   right: 200px;
   z-index: 1;
-  width: 45%;
+  width: 44%;
 }
 
 
@@ -601,8 +594,9 @@
   bottom: -20px;
   right: 200px;
   z-index: 1;
-  width: 58%;
+  width: 60%;
   image-rendering: -webkit-optimize-contrast;
+  margin-bottom: -100px;
 }
 
 
@@ -636,6 +630,7 @@
 }
 
 .offline .inner .inner__center .image-wrapper {
+  min-width: 300px;
   max-width: 300px;
 }
 
@@ -815,6 +810,33 @@
   }
 }
 
+@media screen and (max-width:1460px) {
+  .harmony .inner .inner__bottom img:nth-of-type(1) {
+    max-width: 100%;
+    min-width: 100%;
+  }
+
+  .harmony .inner .inner__bottom img.l1 {
+    top: 200px;
+    left: 22%;
+  }
+  
+  .harmony .inner .inner__bottom img.l2 {
+    top: 120px;
+    right: 26%;
+  }
+  
+  .harmony .inner .inner__bottom img.l3 {
+    top: 90px;
+    left: 38%;
+  }
+  
+  .harmony .inner .inner__bottom img.l4 {
+    top: 260px;
+    right: 30%;
+  }
+}
+
 /* 태블릿 가로 */
 @media screen and (max-width:1280px) {
   html {
@@ -826,9 +848,9 @@
     height: 660px;
   }
 
-  .main .youtube {
-    width: 180%;
-    height: 180%;
+  .main video {
+    width: 155%;
+    height: 155%;
   }
 
   .main .inner img {
@@ -862,26 +884,16 @@
   }
 
   .upload .inner .inner__center img {
-    left: 200px;
-    width: 30%;
+    right: 160px;
   }
 
   .textbook .inner .inner__center img {
     left: 80px;
   }
 
-  .challenge .inner .inner__bottom {
-    margin-bottom: 40px;
-  }
-
-  .challenge .inner .inner__bottom img {
-    width: 200%;
-    top: -180%;
-    left: -90%;
-  }
-
-  .challenge .inner .inner__bottom .top {
-    margin-bottom: 20px;
+  .challenge .inner .inner__center img {
+    right: 80px;
+    width: 65%;
   }
 
   .request .inner img {
@@ -892,11 +904,32 @@
     z-index: 100;
     width: 40%;
   }
+  
 }
 
 @media screen and (max-width:1060px) {
   .inner {
     width: 800px;
+  }
+
+  .harmony .inner .inner__bottom img.l1 {
+    top: 340px;
+    left: 16%;
+  }
+  
+  .harmony .inner .inner__bottom img.l2 {
+    top: 240px;
+    right: 22%;
+  }
+  
+  .harmony .inner .inner__bottom img.l3 {
+    top: 190px;
+    left: 38%;
+  }
+  
+  .harmony .inner .inner__bottom img.l4 {
+    top: 420px;
+    right: 25%;
   }
 
   .main .inner img {
@@ -907,12 +940,14 @@
     width: 180px;
     padding: 30px 20px;
   }
+  
 }
 
 @media screen and (max-width:960px) {
   .inner {
     width: 700px;
   }
+  
 
   .point .inner .inner__center .left {
     margin-left: 50px;
@@ -936,7 +971,7 @@
     padding: 15px;
     padding-top: 50px;
   }
-
+  
   .main .youtube {
     width: 250%;
     height: 250%;
@@ -999,10 +1034,6 @@
 
   .inner {
     height: 490px;
-  }
-
-  .harmony .inner .inner__bottom img:nth-of-type(1) {
-    width: 150%;
   }
 
   .harmony .inner .inner__top {
@@ -1295,11 +1326,6 @@
 
   .main .inner > div:nth-of-type(1) {
     width: 240px;
-  }
-
-  .harmony .inner .inner__bottom img:nth-of-type(1) {
-    /* width: 200%; */
-    min-width: 100%;
   }
 
   .harmony.show .inner .inner__bottom img.location {

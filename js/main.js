@@ -4,10 +4,10 @@ const video_2 = document.querySelector('section.main video:nth-child(2)');
 
 video_2.pause();
 
-video_1.addEventListener('ended', () => {
+video_1.addEventListener('pause', () => {
   // 첫 번째 영상이 종료된 후 두 번째 영상을 재생
-  video_1.remove();
   video_2.play();
+  video_1.remove();
 });
 
 video_2.addEventListener('play', () => {
@@ -50,7 +50,7 @@ window.addEventListener('scroll', () => {
     const text1 = harmony.querySelector('.scroll-text.first');
     const text2 = harmony.querySelector('.scroll-text.second');
 
-    if ( window.scrollY >= (main.offsetHeight + inner.offsetHeight)/1.5 ) {
+    if ( window.scrollY >= (main.offsetHeight + inner.offsetHeight)/1.4 ) {
       text1.classList.add('hide');
       text2.classList.add('show');
     } else {
