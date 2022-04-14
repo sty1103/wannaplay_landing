@@ -97,12 +97,16 @@ section {
 
 
 /* animation 공통 */
-:is(.top-to-bottom, .left-to-right, .right-to-left) {
+.top-to-bottom, .bottom-to-top, .left-to-right, .right-to-left {
   transition: .6s;
   opacity: 0;
 }
 .top-to-bottom {
   transform: translateY(-80px);
+}
+
+.bottom-to-top {
+  transform: translateY(80px);
 }
 
 .left-to-right {
@@ -113,9 +117,12 @@ section {
   transform: translateX(80px);
 }
 
-.show :is(.top-to-bottom, .left-to-right, .right-to-left) {
-  opacity: 1;
-  transform: translateY(0);
+.show .top-to-bottom, 
+.show .bottom-to-top,
+.show .left-to-right,
+.show .right-to-left {
+    opacity: 1 !important;
+    transform: translateY(0);
 }
 
 .delay-1 {

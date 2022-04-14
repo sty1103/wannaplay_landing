@@ -51,7 +51,7 @@ window.addEventListener('scroll', () => {
 });
 
 spyEls.forEach((spyEl, index) => {
-  new ScrollMagic
+  const scrollMagic = new ScrollMagic
     .Scene({
       triggerElement: spyEl,
       triggerHook: .3
@@ -59,6 +59,13 @@ spyEls.forEach((spyEl, index) => {
     .setClassToggle(spyEl, 'show')
     .reverse(false)
     .addTo(new ScrollMagic.Controller());
+
+    if ( index == 7 ) {
+      scrollMagic.on('enter', (e) => {
+        document.querySelector('.textbook .inner .inner__center img:nth-child(2)').src = 
+          'https://d2j7n32xul3s3g.cloudfront.net/images/page6-phone.gif';
+      });
+    }
 });
 
 const floatEls = document.querySelectorAll('.floating');
